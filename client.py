@@ -4,7 +4,7 @@ mydb=mysql.connector.connect(
     host="localhost",
     user="root",
     passwd=" ",  #use your MySQL password here
-    database="give any name to database"
+    database="testdb"
     
 )
 mycursor=mydb.cursor()
@@ -91,7 +91,7 @@ def connect():
     if len(entName.get())<1:
         tkinter.messagebox.showerror(title="ERRoR!!!",message="You must enter your first name")
     else:
-        mycursor.execute("SELECT email FROM users")
+        mycursor.execute("SELECT Username FROM users")
         myresult=mycursor.fetchall()
 
         for row in myresult:

@@ -2,23 +2,23 @@ import mysql.connector
 mydb=mysql.connector.connect(
     host="localhost",
     user="root",
-    passwd="Aj@12345",
-    database="testdb2"
+    passwd=" ", #use your MySQL password here
+    database="testdb"
     
 )
 mycursor=mydb.cursor()
-# mycursor.execute("CREATE DATABASE testdb2")
+# mycursor.execute("CREATE DATABASE testdb")
 
 # mycursor.execute("SHOW DATABASES")
 # for db in mycursor:
 #     print(db)
 
-# mycursor.execute("CREATE TABLE users (email VARCHAR(255), pwd VARCHAR(255),user_id INTEGER AUTO_INCREMENT PRIMARY KEY)")
+# mycursor.execute("CREATE TABLE users (Username VARCHAR(255), pwd VARCHAR(255),user_id INTEGER AUTO_INCREMENT PRIMARY KEY)")
 # mycursor.execute("SHOW TABLES")
 # for table in mycursor:
 #     print(table[0])
 
-# sqlStuff="INSERT INTO users (email,pwd) VALUES (%s,%s)"
+# sqlStuff="INSERT INTO users (Username,pwd) VALUES (%s,%s)"
 # record1=("akankshamaurya0100@gmail.com","akanksha123")
 # mycursor.execute(sqlStuff,record1)
 # mydb.commit()
@@ -34,7 +34,7 @@ def geti():
     count=0
     var1=loginent.get()       #entry box widget for username
     var2=passwordent.get()    #entry box widget for password
-    mycursor.execute("SELECT email FROM users")
+    mycursor.execute("SELECT Username FROM users")
     myresult=mycursor.fetchall()
 
     for row in myresult:
@@ -92,7 +92,7 @@ passwordval=StringVar()
 label1=Label(frame1,text="Username",font="Montserrat 13 bold" )
 label1.pack()
                                                                   
-loginent=Entry(frame1,textvariable=loginval,borderwidth=4,font="Montserrat")     #loginent is the
+loginent=Entry(frame1,textvariable=loginval,borderwidth=4,font="Montserrat")     
 loginent.pack(pady=20,padx=30,ipady=7,ipadx=16) 
 label2=Label(frame1,text="Password ",font="Montserrat 13 bold")
 label2.pack()            

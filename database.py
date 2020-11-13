@@ -4,8 +4,8 @@ mydb=mysql.connector.connect(
     user="root",
     passwd=" ", #use your MySQL password here
     database="testdb"
-    
-)
+    )
+
 mycursor=mydb.cursor()
 # mycursor.execute("CREATE DATABASE testdb")
 
@@ -99,7 +99,7 @@ label2.pack()
 passwordent=Entry(frame1,textvariable=passwordval,show="*",borderwidth=4,font="Montserrat")    
                                                              
 passwordent.pack(pady=20,padx=30,ipady=7,ipadx=16)                                                           
-Button(frame1,text="Click to login",command=geti,borderwidth=8,font="Montserrat 10 bold").pack(pady=(10,20)) 
+Button(frame1,text="Click to login",command=geti,borderwidth=8,font="Montserrat 10 bold").pack(pady=(10,20)) #geti is the method
 
 
 
